@@ -12,3 +12,6 @@
 
 # Linter config
 /.eslintrc.json
+
+# Ignore file fragments
+*.save*
