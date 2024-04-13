@@ -1,0 +1,33 @@
+const { SlashCommandBuilder } = require('discord.js');
+const fs = require('fs');
+
+module.exports = {
+    // Build the new slash command.
+	data: new SlashCommandBuilder()
+		.setName('addguildname')
+		.setDescription('Add a name to the guild name pool.')
+		.addStringOption(option =>
+		option.setName('name')
+			.setRequired(true)
+			.setDescription('The name to add to the pool.')),
+        
+    // The reaction to the command being run.
+	async execute(interaction) {
+		let name = interaction.options.getString('name');
+		let username = 
+interactionUser = interaction.guild.members.fetch(interaction.user.id)
+		fs.appendFile("/home/octo/Bakery-Bot/assets/name_pool.txt", name + "\n", function(err) {
+			if (err) {
+				interaction.reply({content: 'Sorry, something went wrong and the name could not be added to the pool. If this happens again, dm Octo! (Error: ' + err + ')', ephemeral: true});
+			} else {
+				let user = interactionUser = interaction.guild.members.fetch(interaction.user.id);
+				let username = user.user.username;
+				console.log("[" + new Date() + "]" + username + " added '" + name + "' to the name pool.");
+				interaction.reply({content: "Added '" + name + "' to the guild name pool!", ephemeral: true})
+			}
+		});
+		
+
+		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
+	},
+};
