@@ -11,6 +11,6 @@ rest.delete(Routes.applicationGuildCommand(clientId, guildId, 'commandId'))
 	.catch(console.error);
 */
 // for global commands
-rest.delete(Routes.applicationCommand(clientId, 'commandId'))
+rest.delete(Routes.applicationCommand(clientId, '1228554384913207410'))
 	.then(() => console.log('Successfully deleted application command'))
 	.catch(console.error);
