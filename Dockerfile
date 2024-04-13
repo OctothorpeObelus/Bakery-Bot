@@ -6,6 +6,8 @@ WORKDIR /usr/src/bot
 
 COPY package.json /usr/src/bot
 RUN npm install
+RUN apt update
+RUN apt install nano
 
 COPY . /usr/src/bot
 
