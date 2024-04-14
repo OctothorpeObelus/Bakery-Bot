@@ -1,9 +1,10 @@
 version: "3.1"
 services:
   bot:
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
     command: node main.js
     volumes:
-      - .:/usr/src/bot/assets
+      - .:/usr/src/bot
