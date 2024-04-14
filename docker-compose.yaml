@@ -1,0 +1,9 @@
+version: "3.1"
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node main.js
+    volumes:
+      - .:/usr/src/bot/assets
