@@ -12,7 +12,7 @@ module.exports = {
 			let newName = utils.chooseRandomGuildName()
 			console.log("[" + new Date() + "] Changing guild name to '" + newName + "'");
 			lastDate = new Date();
-			message.guild.setName(newName()); //Make it change the guild name when the day changes
+			message.guild.setName(newName); //Make it change the guild name when the day changes
 		}
 	},
 };
